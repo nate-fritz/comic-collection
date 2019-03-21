@@ -1,5 +1,10 @@
 package org.wecancodeit.comiccollection.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,18 +25,18 @@ public class Item {
 	@JsonIgnore
 	private Publisher publisher;
 	
+	@ElementCollection
+	@CollectionTable
+	private Collection<Creator> creators;
+	
 	public Item() {}
 
-	/**
-	 * @param itemName
-	 * @param description
-	 * @param publisher
-	 */
 	public Item(String itemName, String description, Publisher publisher) {
 		super();
 		this.itemName = itemName;
 		this.description = description;
 		this.publisher = publisher;
+		this.creators = new ArrayList<Creator>();
 	}
 
 	public Long getId() {
