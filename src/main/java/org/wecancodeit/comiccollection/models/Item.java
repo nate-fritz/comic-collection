@@ -8,6 +8,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,6 +20,8 @@ public class Item {
 	@GeneratedValue
 	private Long id;
 	private String itemName;
+	
+	@Lob
 	private String description;
 	
 	@ManyToOne

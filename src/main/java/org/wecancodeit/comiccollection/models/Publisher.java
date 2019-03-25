@@ -18,7 +18,7 @@ public class Publisher {
 	private Long id;
 	private String publisherName;
 	
-	@OneToMany(mappedBy="publisher")
+	@OneToMany
 	private Collection<Item> items;
 	
 	@ElementCollection
