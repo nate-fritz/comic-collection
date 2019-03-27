@@ -32,8 +32,9 @@ public class PublisherController {
 	public Collection<Publisher> addPublisher(@RequestBody String body) throws JSONException {
 		JSONObject json = new JSONObject(body);
 		String publisherName = json.getString("publisherName");
+		String rating = json.getString("rating");
 		
-		publisherRepo.save(new Publisher(publisherName));
+		publisherRepo.save(new Publisher(publisherName, rating));
 		
 		return (Collection<Publisher>) publisherRepo.findAll();
 		

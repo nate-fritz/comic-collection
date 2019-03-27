@@ -3,14 +3,14 @@ package org.wecancodeit.comiccollection.models;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Creator {
+public class Series {
 	
 	private String firstName;
 	private String lastName;
 	
-	public Creator() {}
+	public Series() {}
 
-	public Creator(String firstName, String lastName) {
+	public Series(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;

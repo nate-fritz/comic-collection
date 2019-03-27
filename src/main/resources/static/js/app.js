@@ -13,10 +13,11 @@ function main() {
     events.on(getAppContext(), 'click', () => {
         if (event.target.classList.contains('add-publisher__submit')) {
             const publisherName = document.querySelector('.add-publisher__publisher-name').value
-
+            const rating = document.querySelector('.add-publisher__rating').value
 
             api.postRequest('/publishers/add', {
-                publisherName: publisherName
+                publisherName: publisherName,
+                rating: rating
             }, (publishers) => getAppContext().innerHTML = Publishers(publishers))
         }
     })
